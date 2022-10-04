@@ -26,10 +26,12 @@ document.querySelector(".inp-text").onkeydown = (tus) => {
 const pressDisplay = (city) => {
   console.log(city);
   display.innerHTML += `<div class="bg-light">
-  <p class="sehirAdi">${city.name}</p>
-  <h3 class="derece">${Math.ceil(
+  <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    city.sys.country
+  }</sup></h2>
+  <h5 class="derece">${Math.ceil(
     city.main.temp - 273.15
-  )}<sup class="celcius">°C</sup></h3>
+  )}<sup class="celcius">°C</sup></h5>
   <p><i class="fa-solid fa-cloud"></i></p>
   <p class="situation">${Object.values(city.weather)[0].description}</p>
 </div>`;
