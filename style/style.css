@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+}
+
+.cw-logo {
+  width: 300px;
+}
+
+::placeholder {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.inp-text {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.kapsayici-div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.kapsayici-div div {
+  background-color: purple !important;
+  margin: 25px;
+  width: 25% !important;
+  border-radius: 15px;
+  color: white;
+}
+
+.sehirAdi {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+.derece {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.derece .celcius {
+  font-size: 2.5rem !important;
+  font-weight: 300;
+}
+
+i {
+  font-size: 5rem;
+  margin-top: 20px;
+}
+.situation {
+  font-size: 1.5rem;
+  margin: 40px 0;
+}
