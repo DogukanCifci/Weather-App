@@ -46,110 +46,21 @@ const pressDisplay = (city) => {
     ).textContent = `${cityName} not found!`;
   } else {
     weather = Object.values(city.weather)[0]["description"];
-    if (weather == "broken clouds") {
-      display.innerHTML += `<div class="bg-light">
+
+    display.innerHTML += `<div class="bg-light">
     <h2 class="sehirAdi">${
       city.name
     } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
+      city.sys.country
+    }</sup></h2>
     <h5 class="derece">${Math.ceil(
       city.main.temp - 273.15
     )}<sup class="celcius">°C</sup></h5>
-    <p><i class="fa-solid fa-cloud-sun"></i></p>
+    <p><img src="http://openweathermap.org/img/wn/${
+      Object.values(city.weather)[0].icon
+    }@4x.png"></p>
     <p class="situation">${Object.values(city.weather)[0].description}</p>
   </div>`;
-    } else if (weather == "overcast clouds") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-cloud"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else if (weather == "clear sky") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-sun"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else if (weather == "drizzle") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-cloud-rain"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else if (weather == "light rain") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-sharp fa-solid fa-cloud-sun-rain"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else if (weather == "moderate rain") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-cloud-bolt"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else if (weather == "few clouds") {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-cloud"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    } else {
-      display.innerHTML += `<div class="bg-light">
-      <h2 class="sehirAdi">${
-        city.name
-      } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
-        city.sys.country
-      }</sup></h2>
-      <h5 class="derece">${Math.ceil(
-        city.main.temp - 273.15
-      )}<sup class="celcius">°C</sup></h5>
-      <p><i class="fa-solid fa-cloud-rain"></i></p>
-      <p class="situation">${Object.values(city.weather)[0].description}</p>
-    </div>`;
-    }
+    console.log(`${Object.values(city.weather)[0].icon}`);
   }
 };
