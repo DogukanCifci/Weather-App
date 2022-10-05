@@ -37,11 +37,14 @@ document.querySelector(".inp-text").onkeydown = (tus) => {
   }
 };
 
+//ICONS PART
 const pressDisplay = (city) => {
   weather = Object.values(city.weather)[0]["description"];
   if (weather == "broken clouds") {
     display.innerHTML += `<div class="bg-light">
-  <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+  <h2 class="sehirAdi">${
+    city.name
+  } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
   <h5 class="derece">${Math.ceil(
@@ -52,7 +55,9 @@ const pressDisplay = (city) => {
 </div>`;
   } else if (weather == "overcast clouds") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -63,7 +68,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else if (weather == "clear sky") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -74,7 +81,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else if (weather == "drizzle") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -85,7 +94,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else if (weather == "light rain") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -96,7 +107,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else if (weather == "moderate rain") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -107,7 +120,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else if (weather == "few clouds") {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
@@ -118,7 +133,9 @@ const pressDisplay = (city) => {
   </div>`;
   } else {
     display.innerHTML += `<div class="bg-light">
-    <h2 class="sehirAdi">${city.name} <sup class"country-code">${
+    <h2 class="sehirAdi">${
+      city.name
+    } <sup class"country-code" style="background-color:orange;  border-radius:50%;">${
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
