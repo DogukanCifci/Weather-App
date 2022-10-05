@@ -20,10 +20,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 .kapsayici-div div {
   background-color: white !important;
   margin: 25px;
+
   width: 22% !important;
   border-radius: 15px;
   color: black;
@@ -59,4 +61,12 @@ i {
   background-color: yellow !important;
   font-size: 4rem;
   color: purple !important;
+}
+
+.samecity-display {
+  width: 50%;
+  margin: -40px auto;
+  color: rgb(169, 14, 14);
+  font-size: 1.5rem;
+  font-weight: 300;
 }
