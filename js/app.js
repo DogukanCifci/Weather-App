@@ -31,6 +31,7 @@ button.onclick = () => {
     setTimeout(() => {
       document.querySelector(".samecity-display").textContent = "";
     }, 3000);
+    document.querySelector(".inp-text").value = "";
   }
 };
 
@@ -47,6 +48,7 @@ const pressDisplay = (city) => {
     document.querySelector(
       ".samecity-display"
     ).textContent = `${cityName} not found!`;
+    document.querySelector(".inp-text").value = "";
     setTimeout(() => {
       document.querySelector(".samecity-display").textContent = "";
     }, 3000);
