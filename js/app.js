@@ -8,7 +8,7 @@ const getInfos = (cityName) => {
   console.log(cityName);
 
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d9b53b6af071e91297e071e6ffc3e133`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d9b53b6af071e91297e071e6ffc3e133&units=metric`
   )
     .then((response) => response.json())
     .then((data) => pressDisplay(data));
@@ -17,7 +17,7 @@ const getInfos = (cityName) => {
 
 button.onclick = () => {
   cityName = document.querySelector(".inp-text").value;
-  cityName = cityName.toUpperCase();
+  cityName = cityName.toUpperCase().trim(); //sagdan soldan bosluklu yazilirsa o bosluklari kaldirmasi icin
   if (!cities.includes(cityName)) {
     document.querySelector(".samecity-display").textContent = "";
     cities.push(cityName);
@@ -28,6 +28,9 @@ button.onclick = () => {
       ".samecity-display"
     ).textContent = `You already know the weather for ${cityName}. Please search for the
       another city 🌏`;
+    setTimeout(() => {
+      document.querySelector(".samecity-display").textContent = "";
+    }, 3000);
   }
 };
 
@@ -44,9 +47,12 @@ const pressDisplay = (city) => {
     document.querySelector(
       ".samecity-display"
     ).textContent = `${cityName} not found!`;
+    setTimeout(() => {
+      document.querySelector(".samecity-display").textContent = "";
+    }, 3000);
   } else {
     weather = Object.values(city.weather)[0]["description"];
-
+    console.log(weather);
     display.innerHTML += `<div class="bg-light">
     <h2 class="sehirAdi">${
       city.name
@@ -54,7 +60,7 @@ const pressDisplay = (city) => {
       city.sys.country
     }</sup></h2>
     <h5 class="derece">${Math.ceil(
-      city.main.temp - 273.15
+      city.main.temp //fetchdeki linkte units=metric sayesinde kelvin direk celciusa döndü
     )}<sup class="celcius">°C</sup></h5>
     <p><img src="http://openweathermap.org/img/wn/${
       Object.values(city.weather)[0].icon

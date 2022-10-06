@@ -16,7 +16,7 @@
 .kapsayici-div {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   margin-top: 40px;
 }
 .kapsayici-div div {
