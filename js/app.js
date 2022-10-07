@@ -8,7 +8,7 @@ const getInfos = (cityName) => {
   console.log(cityName);
 
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d9b53b6af071e91297e071e6ffc3e133&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d9b53b6af071e91297e071e6ffc3e133&units=metric&lang=de&exclude=hourly`
   )
     .then((response) => response.json())
     .then((data) => pressDisplay(data));
